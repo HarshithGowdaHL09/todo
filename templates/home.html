@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST - Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        :root {
+            --dark-navy: #0a192f;
+            --navy: #112240;
+            --light-navy: #233554;
+            --slate: #8892b0;
+            --light-slate: #ccd6f6;
+            --lightest-slate: #e6f1ff;
+            --accent-blue: #64ffda;
+        }
+
+        body {
+            background-color: var(--dark-navy);
+            color: var(--light-slate);
+        }
+
+        .container h3,
+        .container h4,
+        .container h5 {
+            color: var(--lightest-slate);
+        }
+
+        .text-muted {
+            color: var(--slate) !important;
+        }
+
+        .card {
+            background-color: var(--navy);
+            border: 1px solid var(--light-navy);
+            color: var(--light-slate);
+        }
+
+        .form-control {
+            padding: 1.375rem .75rem !important;
+            background-color: var(--light-navy) !important;
+            color: var(--lightest-slate) !important;
+            border: 1px solid var(--light-navy) !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-blue) !important;
+            box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, .25) !important;
+        }
+
+        .form-control::placeholder {
+            color: var(--slate);
+        }
+
+        .btn-primary {
+            background-color: transparent;
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-navy);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--light-navy);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--slate);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="pt-5 text-center">Django ToDo App</h3>
+        <div class="row mt-4">
+            <h4>My Day</h4>
+            <p class="text-muted">{% now "jS F Y" %}</p>
+            <div class="col-md-7 col-lg-7" style="height: 450px; overflow-y: auto;">
+                <div class="card m-1">
+                    <div class="card-body">
+                        This is some Task
+                        <span style="position: relative; float: right;">
+                            <a href="#" class="btn btn-success"><i class="fa fa-check"></i> Mark as Done</a>
+                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- <div class="card m-1">
+                    <div class="card-body">
+                        Another Task
+                        <span style="position: relative; float: right;">
+                            <a href="#" class="btn btn-success"><i class="fa fa-check"></i> Mark as Done</a>
+                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        </span>
+                    </div>
+                </div> -->
+
+
+            </div>
+            <div class="col-md-5 col-lg-5">
+                <h5>Completed Tasks</h5>
+                <div class="card m-1">
+                    <div class="card-body">
+                        <s>This is the completed task.</s>
+                        <span style="position: relative; float: right;">
+                            <a href="#" class="btn btn-warning"><i class="fa fa-undo"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-6 p-0" style="position: absolute; bottom: 50px;">
+                <form action="">
+                    <div class="form-group">
+                        <span style="display: flex;">
+                            <input type="text" class="form-control" placeholder="Add a task">
+                            <button class="btn btn-primary" style="width: 200px;"><i class="fa fa-plus"></i>
+                                Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
