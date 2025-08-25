@@ -1,6 +1,6 @@
 
 
-## 📝 Django To-Do List App 
+# 📝 Django To-Do List App 
 
 #### A simple and clean To-Do List Web Application built with Django.
 ##### This project helps you practice **CRUD** operations (Create, Read, Update, Delete) while learning Django’s core features like models, views, templates, and URL routing.
